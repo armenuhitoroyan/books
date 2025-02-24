@@ -1,5 +1,5 @@
 import { type PayloadAction, createSlice } from "@reduxjs/toolkit"
-import type { IState } from "./types"
+import type { IBook, IState } from "./types"
 
 const initialState: IState = {
   books: [
@@ -45,6 +45,8 @@ const initialState: IState = {
   ],
 }
 
+export type InputBook = { id?: string } & Omit<IBook, "id">
+
 export const BookSlice = createSlice({
   name: "books",
   initialState,
@@ -55,8 +57,17 @@ export const BookSlice = createSlice({
         book.isLiked = !book.isLiked
       }
     },
+    addBook: (state: IState, action: PayloadAction<InputBook>) => {
+      action.payload.id = Date.now().toString()
+
+      // input-ից վերցված արժեքն այնուամենայնիվ տեքստային է,
+      // ուստի rating-ի տիպը փոխենք թվային
+
+      action.payload.rating = +action.payload.rating
+      state.books.push(action.payload as IBook)
+    },
   },
 })
 
 export const bookReducer = BookSlice.reducer
-export const { likeBook } = BookSlice.actions
+export const { likeBook, addBook } = BookSlice.actions
