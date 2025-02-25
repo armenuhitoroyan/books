@@ -2,7 +2,8 @@ import { Button, Box, Modal, TextField } from "@mui/material"
 import { useState } from "react"
 import { type SubmitHandler, useForm } from "react-hook-form"
 import { useAppDispatch } from "../../app/hooks"
-import { addBook } from "./book.slice"
+import { /*addBook,  */ addNewBook } from "./book.slice"
+import { IBook } from "./types"
 
 const style = {
   position: "absolute" as "absolute",
@@ -30,9 +31,16 @@ const AddBook: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const handleAdd: SubmitHandler<Inputs> = data => {
     console.log(data)
-    dispatch(addBook(data))
-    reset()
-    setIsOpen(false)
+    data.rating = +data.rating
+    // dispatch(addBook(data))
+    dispatch(addNewBook(data))
+      // reset()
+      // setIsOpen(false)
+      .unwrap()
+      .then((data: IBook) => {
+        reset()
+        setIsOpen(false)
+      })
   }
   const {
     register,

@@ -1,0 +1,48 @@
+{
+  "books": [
+    {
+      "id": "1ab",
+      "title": "Fairy Tales",
+      "author": "Hovhannes Tumanyan",
+      "rating": 5,
+      "photo": "https://asset.vlume.com/covers/full/TL/IL-53.jpg",
+      "isLiked": true
+    },
+    {
+      "id": "2cd",
+      "title": "The wonders of Armenia",
+      "author": "",
+      "rating": 4,
+      "photo": "https://online.anyflip.com/vgrh/weqd/files/mobile/1.jpg?1537847857"
+    },
+    {
+      "id": "3ef",
+      "title": "Children's Bible",
+      "author": "",
+      "rating": 4,
+      "photo": "https://m.media-amazon.com/images/I/71I8bMtFyIL._AC_UF1000,1000_QL80_.jpg",
+      "isLiked": true
+    },
+    {
+      "id": "4gh",
+      "title": "Sasuntsi Davit",
+      "author": "Hovhannes Tumanyan",
+      "rating": 5,
+      "photo": "https://zangakbookstore.am/media/products/300x0/a941e34fcfa6da68033c72c5088cd509.jpeg"
+    },
+    {
+      "id": "5ij",
+      "title": "Le Petit Prince",
+      "author": "Antoine de Saint-Exupéry",
+      "rating": 5,
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCG5sWkvWjei8p0frnZ-nwdMqImzFvST2tXt0oBMeuJ7dcXmn5dej4VgHdQmbMezvsvSw&usqp=CAU"
+    },
+    {
+      "id": "0759",
+      "title": "Robin Hood",
+      "author": "Howard Pyle",
+      "rating": 4,
+      "photo": "https://bookmark.am/app/uploads/2021/03/%D5%8C%D5%B8%D5%A2%D5%AB%D5%B6-%D5%80%D5%B8%D6%82%D5%A4-01.jpg"
+    }
+  ]
+}
