@@ -3,8 +3,10 @@ import {
   createSlice,
   createAsyncThunk,
 } from "@reduxjs/toolkit"
+import { action, ActionType, getType } from "typesafe-actions"
 import type { IBook, IState } from "./types"
 import { getBooks, postBook } from "../api"
+import { addBookAction, loadBooksAction } from "./book.actions"
 
 const initialState: IState = {
   books: [],
@@ -57,6 +59,20 @@ export const BookSlice = createSlice({
         state.books.push(action.payload)
       },
     )
+
+    builder
+      .addCase(
+        getType(loadBooksAction.success),
+        (state, action: ActionType<typeof loadBooksAction.success>) => {
+          state.books = action.payload
+        },
+      )
+      .addCase(
+        getType(addBookAction.success),
+        (state, action: ActionType<typeof addBookAction.success>) => {
+          state.books.push(action.payload)
+        },
+      )
   },
 })
 

@@ -4,6 +4,7 @@ import { type SubmitHandler, useForm } from "react-hook-form"
 import { useAppDispatch } from "../../app/hooks"
 import { /*addBook,  */ addNewBook } from "./book.slice"
 import { IBook } from "./types"
+import { addBookAction } from "./book.actions"
 
 const style = {
   position: "absolute" as "absolute",
@@ -33,14 +34,19 @@ const AddBook: React.FC = () => {
     console.log(data)
     data.rating = +data.rating
     // dispatch(addBook(data))
-    dispatch(addNewBook(data))
+
+    /* dispatch(addNewBook(data))
       // reset()
       // setIsOpen(false)
       .unwrap()
       .then((data: IBook) => {
         reset()
         setIsOpen(false)
-      })
+      }) */
+
+    dispatch(addBookAction.request(data))
+    reset()
+    setIsOpen(false)
   }
   const {
     register,
