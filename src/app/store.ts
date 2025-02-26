@@ -4,7 +4,7 @@ import { combineSlices, configureStore } from "@reduxjs/toolkit"
 import { BookSlice } from "../features/books/book.slice"
 
 import createSagaMiddleware from "redux-saga"
-import rootSaga from "../features/books/rootSaga"
+import rootSaga from "../features/rootSaga"
 
 const rootReducer = combineSlices(BookSlice)
 const sagaMiddleware = createSagaMiddleware()
